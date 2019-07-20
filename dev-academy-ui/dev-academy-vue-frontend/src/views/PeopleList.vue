@@ -20,9 +20,9 @@
       <tbody>
         <tr v-for="person in people" :key="person.id" >
           <td> <router-link :to="{name: 'person-edit', params: { id: person.id }}">{{person | fullName}}</router-link></td>
-          <td :style="{colour:person | palindrome == 'No' ? 'red' : 'green'}">{{(person | palindrome) ? 'No' : 'Yes'}}</td>
-          <td :style="{colour:person.authorised == 'No' ? 'red' : 'green'}">{{person.authorised ? 'No' : 'Yes'}}</td>
-          <td :style="{colour:person.enabled == 'No' ? 'red' : 'green'}">{{person.enabled ? 'No' : 'Yes'}}</td>
+          <td :style="{color:person | palindrome == 'Yes' ? 'green' : 'red'}">{{(person | palindrome) ? 'Yes' : 'No'}}</td>
+          <td :style="{color:person.authorised == 'Yes' ? 'green' : 'red'}">{{person.authorised ? 'Yes' : 'No'}}</td>
+          <td :style="{color:person.enabled == 'Yes' ? 'green' : 'red'}">{{person.enabled ? 'Yes' : 'No'}}</td>
           <td>{{person.colours | colourNames}}</td>
         </tr>
       </tbody>
